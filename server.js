@@ -2,12 +2,16 @@ const mysql = require('mysql2');
 const inquirer = require('inquirer');
 require('console.table');
 
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'em_system_db'
+  });
 
+  function appStart() {
 
-function appStart() {
     inquirer
-        .prompt([
-            {
+        .prompt({
                 type: 'list',
                 name: 'options',
                 message: 'Navigation Options Listed',
@@ -18,10 +22,9 @@ function appStart() {
                     'add a department',
                     'add a role',
                     'add an employee',
-                    'update an employee role'
-                ]
-            
-        
+                    'update an employee role',
+                         ]
+            })
         .then ((data) => {
             console.log (data)
             
@@ -61,3 +64,48 @@ function appStart() {
                 default:
                     break;
             };
+        }
+
+        )};
+            connection.query(
+                'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+                function(err, results, fields) {
+                  console.log(results); // results contains rows returned by server
+                  console.log(fields); // fields contains extra meta data about results, if available
+                }
+              );
+
+              connection.query(
+                'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+                function(err, results, fields) {
+                  console.log(results); // results contains rows returned by server
+                  console.log(fields); // fields contains extra meta data about results, if available
+                }
+              );
+
+              connection.query(
+                'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+                function(err, results, fields) {
+                  console.log(results); // results contains rows returned by server
+                  console.log(fields); // fields contains extra meta data about results, if available
+                }
+              );
+
+              connection.query(
+                'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+                function(err, results, fields) {
+                  console.log(results); // results contains rows returned by server
+                  console.log(fields); // fields contains extra meta data about results, if available
+                }
+              );
+
+              connection.query(
+                'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+                function(err, results, fields) {
+                  console.log(results); // results contains rows returned by server
+                  console.log(fields); // fields contains extra meta data about results, if available
+                }
+              );
+              
+            
+
