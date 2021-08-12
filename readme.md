@@ -13,7 +13,7 @@ Depository Link: https://github.com/codywmarkham/Employee-Management-System
 
 Once deployed, the application appears as the image attached below on a traditional desktop.
 
-![Explantion Image](https://github.com/codywmarkham/Employee-Management-System/blob/main/assests/images/samplehtml1.PNG)
+
 ![caption](https://github.com/codywmarkham/Employee-Management-System/blob/main/assests/images/example.gif)
 
 ## Resources
