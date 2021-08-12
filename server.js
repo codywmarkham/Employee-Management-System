@@ -5,15 +5,14 @@ require('console.table');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'em_system_db'
+    password: 'L0lwtfbbq!'
   });
 
   function appStart() {
 
-    inquirer
-        .prompt({
-                type: 'list',
-                name: 'options',
+    inquirer.prompt([{
+                type: 'rawlist',
+                name: 'start',
                 message: 'Navigation Options Listed',
                 choices: [
                     'view all departments',
@@ -24,11 +23,11 @@ const connection = mysql.createConnection({
                     'add an employee',
                     'update an employee role',
                          ]
-            })
+            }])
         .then ((data) => {
             console.log (data)
             
-            switch (data.options){
+            switch (data.start){
                 case "view all departments":
                 viewDepartments()
                 break;
@@ -72,8 +71,8 @@ const connection = mysql.createConnection({
             connection.query(
               'SELECT * FROM `department',
               function(err, results, fields) {
-                console.log(results); // results contains rows returned by server
-                console.log(fields); // fields contains extra meta data about results, if available
+                console.log(results); 
+                console.log(fields); 
               }
             );
         }
@@ -82,8 +81,8 @@ const connection = mysql.createConnection({
               connection.query(
                 'SELECT * FROM `roles',
                 function(err, results, fields) {
-                  console.log(results); // results contains rows returned by server
-                  console.log(fields); // fields contains extra meta data about results, if available
+                  console.log(results); 
+                  console.log(fields); 
                 }
               );
         }
@@ -92,9 +91,10 @@ const connection = mysql.createConnection({
               connection.query(
                 'SELECT * FROM `employees',
                 function(err, results, fields) {
-                  console.log(results); // results contains rows returned by server
-                  console.log(fields); // fields contains extra meta data about results, if available
+                  console.log(results); 
+                  console.log(fields); 
                 }
               );
             }
+
 
