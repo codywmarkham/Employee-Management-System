@@ -89,7 +89,7 @@ const connection = mysql.createConnection({
 
         const viewEmployee = () => {
               connection.query(
-                'SELECT * FROM `employees',
+                'SELECT * FROM `employee',
                 function(err, results, fields) {
                   console.log(results); 
                   console.log(fields); 
@@ -97,4 +97,43 @@ const connection = mysql.createConnection({
               );
             }
 
+            const addDepartment = () => {
+                connection.query(
+                  'INSERT INTO `department',
+                  function(err, results, fields) {
+                    console.log(results); 
+                    console.log(fields); 
+                  }
+                );
+              }
+
+              const addRole = () => {
+                connection.query(
+                  'INSERT INTO `roles',
+                  function(err, results, fields) {
+                    console.log(results); 
+                    console.log(fields); 
+                  }
+                );
+              }
+
+              const addEmployee = () => {
+                connection.query(
+                  'INSERT INTO `employee',
+                  function(err, results, fields) {
+                    console.log(results); 
+                    console.log(fields); 
+                  }
+                );
+              }
+
+              const updateEmployeeRole = () => {
+                connection.query(
+                  'UPDATE `employee', 'SET role_id', 
+                  function(err, results, fields) {
+                    console.log(results); 
+                    console.log(fields); 
+                  }
+                );
+              }
 
