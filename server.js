@@ -76,6 +76,7 @@ const connection = mysql.createConnection({
                 console.log(fields); // fields contains extra meta data about results, if available
               }
             );
+        }
 
         const viewRoles = () => {
               connection.query(
@@ -85,6 +86,7 @@ const connection = mysql.createConnection({
                   console.log(fields); // fields contains extra meta data about results, if available
                 }
               );
+        }
 
         const viewEmployee = () => {
               connection.query(
@@ -94,4 +96,5 @@ const connection = mysql.createConnection({
                   console.log(fields); // fields contains extra meta data about results, if available
                 }
               );
+            }
 
