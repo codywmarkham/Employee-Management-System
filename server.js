@@ -69,7 +69,7 @@ const connection = mysql.createConnection({
 
         const viewDepartments = () => {
             connection.query(
-              'SELECT * FROM `department',
+              'DESCRIBE `department',
               function(err, results, fields) {
                 console.log(results); 
                 console.log(fields); 
@@ -79,7 +79,7 @@ const connection = mysql.createConnection({
 
         const viewRoles = () => {
               connection.query(
-                'SELECT * FROM `roles',
+                'DESCRIBE `roles',
                 function(err, results, fields) {
                   console.log(results); 
                   console.log(fields); 
@@ -89,7 +89,7 @@ const connection = mysql.createConnection({
 
         const viewEmployee = () => {
               connection.query(
-                'SELECT * FROM `employee',
+                'DESCRIBE `employee',
                 function(err, results, fields) {
                   console.log(results); 
                   console.log(fields); 
@@ -137,3 +137,4 @@ const connection = mysql.createConnection({
                 );
               }
 
+              appStart();
